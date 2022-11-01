@@ -85,7 +85,7 @@ CMNIST::CMNIST(const std::string& root, Mode mode):is_train_(mode==Mode::kTrain)
 }
 torch::data::Example<> CMNIST::get(size_t index)
 {
-	return torch::data::Example(images_[index],targets_[index]);
+	return {images_[index],targets_[index]};
 }
 c10::optional<size_t> CMNIST::size() const
 {
